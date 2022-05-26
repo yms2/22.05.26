@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가로메뉴1</title>
+    <style>
+        *{margin: 0;padding: 0;}
+        ul,li{list-style: none;}    
+        a{text-decoration: none;}
+
+        #nav{margin: 100px;
+             width: 500px;height: 60px;
+             border: 1px solid #ccc;position: relative;}
+        #nav > ul{width: 500px; height: 30px;
+                  border-bottom: 1px solid #ccc;}
+        #nav > ul > li{float: left;
+                        width: 100px; height: 30px;border-bottom: 1px solid #ccc;
+                        box-sizing: border-box;
+        }    
+        #nav > ul > li >a{display: block; height: 30px;
+                    text-align: center; line-height: 30px;}
+        #nav > ul > li:last-child{border-right: 0;}
+
+        #nav .sub{width: 500px; position: absolute;left: 0;top: 31px;}
+        #nav .sub1{background-color: aliceblue;}
+        #nav .sub2{background-color: rgb(178, 49, 167);}
+        #nav .sub3{background-color: rgb(161, 27, 27);}
+        #nav .sub4{background-color: rgb(38, 149, 75);}
+        #nav .sub5{background-color: rgb(11, 30, 46);}
+        #nav .sub li{float: left; width: 100px; height: 30px;border-bottom: 1px solid #ccc;}
+        #nav .sub li a{display: block;
+                    text-align: center;
+                    line-height: 30px;}
+        
+</style>
+<script src="./js/jquery.js"></script>
+<script>
+    $(document).ready(function(){
+        //초기상태
+        $('.sub').css({display:'none'});
+
+        $('.main > li').click(function(){
+            // $('.sub').css({display:'none'});
+            //순환처리문
+            $('.sub').each(function(){
+                if($(this).css('display')=="block"){
+                    $(this).css({display:'none'});
+                }
+            })
+            // $(this).find('.sub').css({display:'block'})
+            // $(this).find('.sub').show(500)
+            // $(this).find('.sub').slideDown(500)
+            var i = $(this).index()
+            $('.sub').eq(i).css({display:'block'})
+        })
+
+    })
+</script>
+</head>
+<body>
+    <div id="nav">
+        <ul class="main">
+            <li><a href="#">menu</a></li>
+            <li><a href="#">menu</a></li>
+            <li><a href="#">menu</a></li>
+            <li><a href="#">menu</a></li>
+            <li><a href="#">menu</a></li>
+        </ul>
+        <ul class="sub sub1">
+            <li><a href="#">s_menu</a></li>
+            <li><a href="#">s_menu</a></li>
+            <li><a href="#">s_menu</a></li>
+            <li><a href="#">s_menu</a></li>
+            <li><a href="#">s_menu</a></li>
+        </ul>
+
+        <ul class="sub sub2">
+            <li><a href="#">s_menu</a></li>
+            <li><a href="#">s_menu</a></li>
+            <li><a href="#">s_menu</a></li>
+            <li><a href="#">s_menu</a></li>
+            <li><a href="#">s_menu</a></li>
+        </ul>
+        <ul class="sub sub3">
+            <li><a href="#">s_menu</a></li>
+            <li><a href="#">s_menu</a></li>
+            <li><a href="#">s_menu</a></li>
+            <li><a href="#">s_menu</a></li>
+            <li><a href="#">s_menu</a></li>
+        </ul>
+        <ul class="sub sub4">
+            <li><a href="#">s_menu</a></li>
+            <li><a href="#">s_menu</a></li>
+            <li><a href="#">s_menu</a></li>
+            <li><a href="#">s_menu</a></li>
+            <li><a href="#">s_menu</a></li>
+        </ul>
+        <ul class="sub sub5">
+            <li><a href="#">s_menu</a></li>
+            <li><a href="#">s_menu</a></li>
+            <li><a href="#">s_menu</a></li>
+            <li><a href="#">s_menu</a></li>
+            <li><a href="#">s_menu</a></li>
+        </ul>
+    </div>
+</body>
+</html>

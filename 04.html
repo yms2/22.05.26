@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>풀다운메뉴</title>
+    <style>
+        *{margin: 0;padding: 0;}
+        ul,li{list-style: none;}
+        a{text-decoration: none;}
+        
+        #header{ width: 100%; height: 120px;padding-top: 60px;
+                background-color: aqua;
+                box-sizing: border-box;}
+        #header .nav{margin: 0 auto;
+                    width: 1200px; height: 50px;
+                    background-color: wheat;}
+        #header .nav ul{}
+        #header .nav ul li{ float: left; width: 240px;height: 50px;}
+        #header .nav ul li a{display: block;text-align: center;line-height: 25px;background-color: transparent;}
+        #header .nav ul li span{display: flex; ;color: white;display: none;}
+        #header .submn_area{width: 100%;height: 0px;
+                            background-color: cadetblue;
+                            position: absolute; top: 120px;left: 0;
+                            z-index: 100;}
+        #header .nav ul li a.on{background-color: brown;
+                                color: white;}
+
+        
+        #main_img{width: 100%; height: 350px;
+        background-color: blueviolet;}
+
+        
+</style>
+<script src="./js/jquery.js"></script>
+<script>
+    $(document).ready(function(){
+        $('.submn_area').hide();
+
+        $('.nav').mouseover(function(){
+        // $('.submn_area').slideDown()
+        $('.submn_area').stop().show().animate({height:'350px'},800)
+        })
+        $('.nav a').hover(
+            function(){
+           // $(this).css({backgroundColor:'brown'})
+           
+           $(this).addClass('on');
+           $(this).find('span').css({display:'block'});
+           
+        },
+        function(){
+                   $('.nav a').removeClass('on');
+                   $(this).find('span').css({display:'none'})
+               }
+        );
+
+        $('.submn_area').mouseout(function(){
+            // $('.submn_area').slideUp();
+            $('.submn_area').stop().animate({height:'0px'},800)
+        })
+
+
+    })
+</script>
+</head>
+<body>
+    <div id="header">
+        <div class="nav">
+            <ul>
+                <li><a href="#">menu<span>sub</span></a></li>
+                <li><a href="#">menu<span>sub</span></a></li>
+                <li><a href="#">menu<span>sub</span></a></li>
+                <li><a href="#">menu<span>sub</span></a></li>
+                <li><a href="#">menu<span>sub</span></a></li>
+            </ul>
+        </div><div class="submn_area">
+        </div>
+    </div>
+    <div id="main_img"></div>
+    
+    
+</body>
+</html>

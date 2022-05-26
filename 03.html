@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>세로메뉴1</title>
+    <style>
+        *{margin: 0;padding: 0;}
+        ul,li{list-style: none;}
+        a{text-decoration: none;}
+
+        #nav{float: left;
+            margin: 100px;
+             width: 100px;
+        border: 1px solid #ccc;}
+        #nav > ul > li{ width: 100px;border-bottom: 1px solid #ccc;
+            box-sizing: border-box;}    
+        #nav > ul > li >a{display: block; height: 30px;
+                    text-align: center; line-height: 30px;}
+        #nav > ul > li:last-child{border-right: 0;}
+
+
+        #nav .sub{width: 100%; background-color: rgb(126, 203, 203);}
+        #nav .sub li{height: 30px;border-bottom: 1px solid #ccc;}
+        #nav .sub li a{display: block;
+                    text-align: center;
+                    line-height: 30px;}
+                    
+</style>
+<script src="./js/jquery.js"></script>
+<script>
+    $(document).ready(function(){
+        //초기상태
+        $('.sub').css({display:'none'});
+
+        $('.btn').click(function(){
+            // $('.sub').css({display:'none'});
+            $('.sub').each(function(){
+                if($(this).css('display')=='block'){
+                    $(this).slideUp();
+                }
+            })
+           var submn = $(this).next('.sub')
+           submn.slideDown(700);
+        })
+
+
+
+    })
+</script>
+</head>
+<body>
+    <div id="nav">
+        <ul class="main">
+            <li><a href="#" class="btn">menu</a>
+            <ul class="sub">
+                <li><a href="#">s_menu</a></li>
+                <li><a href="#">s_menu</a></li>
+                <li><a href="#">s_menu</a></li>
+                <li><a href="#">s_menu</a></li>
+                <li><a href="#">s_menu</a></li>
+            </ul>
+            </li>
+            <li><a href="#"class="btn">menu</a>
+                <ul class="sub">
+                    <li><a href="#">s_menu</a></li>
+                    <li><a href="#">s_menu</a></li>
+                    <li><a href="#">s_menu</a></li>
+                    <li><a href="#">s_menu</a></li>
+                    <li><a href="#">s_menu</a></li>
+                </ul></li>
+            <li><a href="#"class="btn">menu</a>
+                <ul class="sub">
+                    <li><a href="#">s_menu</a></li>
+                    <li><a href="#">s_menu</a></li>
+                    <li><a href="#">s_menu</a></li>
+                    <li><a href="#">s_menu</a></li>
+                    <li><a href="#">s_menu</a></li>
+                </ul></li>
+            <li><a href="#"class="btn">menu</a>
+                <ul class="sub">
+                    <li><a href="#">s_menu</a></li>
+                    <li><a href="#">s_menu</a></li>
+                    <li><a href="#">s_menu</a></li>
+                    <li><a href="#">s_menu</a></li>
+                    <li><a href="#">s_menu</a></li>
+                </ul></li>
+            <li><a href="#"class="btn">menu</a>
+                <ul class="sub">
+                    <li><a href="#">s_menu</a></li>
+                    <li><a href="#">s_menu</a></li>
+                    <li><a href="#">s_menu</a></li>
+                    <li><a href="#">s_menu</a></li>
+                    <li><a href="#">s_menu</a></li>
+                </ul></li>
+        </ul>
+
+    </div>
+</body>
+</html>
